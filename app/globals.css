@@ -30,6 +30,31 @@ body {
   color: #1e293b;
   outline: none;
   transition: border-color 150ms ease, box-shadow 150ms ease;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="datetime-local"] {
+  min-width: 0;
+  width: 100%;
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 420px) {
+  aside {
+    padding: 1rem;
+  }
+
+  aside form {
+    min-width: 0;
+  }
+
+  aside button {
+    min-height: 2.875rem;
+    white-space: normal;
+    line-height: 1.25;
+  }
 }
 
 .field:focus {
