@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #1e293b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.field {
+  margin-top: 0.5rem;
+  display: block;
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.7rem 0.75rem;
+  font-size: 0.875rem;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgb(245 158 11 / 12%);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  padding: 1rem 1.1rem;
+}
+
+.reveal {
+  animation: rise-in 450ms ease-out both;
+}
+
+.toast {
+  animation: toast-in 240ms ease-out both;
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }

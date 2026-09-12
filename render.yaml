@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: roombook-frontend
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: /backend
+      - key: BACKEND_API_URL
+        sync: false
