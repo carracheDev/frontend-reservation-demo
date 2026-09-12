@@ -44,3 +44,4 @@ Laisser `NEXT_PUBLIC_API_URL=/backend`. Le serveur Next proxifie les appels vers
 - `/reservations` : reservations du jour et a venir
 
 Identifiants de demonstration backend : `demo` / `demo123`.
+# frontend-reservation-demo
